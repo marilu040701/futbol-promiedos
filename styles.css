@@ -162,6 +162,12 @@ footer {
     gap: 0.5rem;
   }
 
+  section {
+    scroll-margin-top: 180px;
+  }
+}
+
+
   .cards-container {
     flex-direction: column;
   }
