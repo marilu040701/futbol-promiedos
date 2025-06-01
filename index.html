@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fútbol Promiedos - Resultados y Estadísticas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Fútbol Promiedos</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#resenas">Reseñas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h2>Bienvenidos a Fútbol Promiedos</h2>
+      <p>La mejor web para resultados, estadísticas y análisis de fútbol.</p>
+      <img src="imagenes/futbol.jpg" alt="Partido de fútbol" />
+    </section>
+
+    <section id="productos">
+      <h2>Productos</h2>
+      <div class="cards-container">
+        <div class="card">
+          <img src="imagenes/camiseta.jpg" alt="Camiseta fútbol de River" />
+          <h3>Camisetas Oficiales</h3>
+          <p>Compra las camisetas oficiales de tus equipos favoritos.</p>
+        </div>
+        <div class="card">
+          <img src="imagenes/pelota.jpg" alt="Pelota de fútbol" />
+          <h3>Balones de Calidad</h3>
+          <p>Balones para entrenamiento y competición, con los mejores materiales.</p>
+        </div>
+        <div class="card">
+          <img src="imagenes/botines.jpg" alt="Botines de fútbol Nike" />
+          <h3>Botas Profesionales</h3>
+          <p>Encuentra botas para todos los terrenos y estilos de juego.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="resenas">
+      <h2>Reseñas</h2>
+      <div class="grid-reviews">
+        <article class="review">
+          <h3>Excelente calidad</h3>
+          <p>Las camisetas son de muy buena calidad, la tela es cómoda y resistente. PD: AGUANTE RIVER!!</p>
+          <p><strong>- Enzo Fernandez</strong></p>
+        </article>
+        <article class="review">
+          <h3>Muy recomendado</h3>
+          <p>Las pelotas cumplen todas las expectativas, perfecto para entrenar.</p>
+          <p><strong>- Analía Gómez</strong></p>
+        </article>
+        <article class="review">
+          <h3>Gran atención</h3>
+          <p>El servicio al cliente fue rápido y eficaz. Volveré a comprar sin dudas.</p>
+          <p><strong>- Carlos Ruiz Diaz</strong></p>
+        </article>
+        <article class="review">
+          <h3>Excelente para principiantes</h3>
+          <p>Los botines son cómodos y duraderos, ideal para cualquiera del fútbol.</p>
+          <p><strong>- Agustin Urzi</strong></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form action="https://formspree.io/f/mldnerkg" method="POST" class="contact-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="name" required />
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="message" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Fútbol Promiedos - Todos los derechos reservados</p>
+  </footer>
+</body>
+</html>
