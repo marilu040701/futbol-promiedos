@@ -55,12 +55,16 @@ section {
 }
 
 /* Inicio */
-#inicio img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-top: 1rem;
+  .imagen-inicio {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 0.5rem;
 }
+
+
 
 /* Productos - Flexbox */
 .cards-container {
