@@ -11,25 +11,25 @@ let listaProductos = [
     id: 1,
     title: 'Camiseta River Plate 23/24',
     price: 25000,
-    image: 'imagenesUsadas/camiseta_river.jpg'
+    image: 'imagenesUsadas/camiseta.jpg'
   },
   {
     id: 2,
     title: 'Pelota Adidas Copa Mundial',
     price: 18000,
-    image: 'imagenesUsadas/pelota_adidas.jpg'
+    image: 'imagenesUsadas/pelota.jpg'
   },
   {
     id: 3,
     title: 'Botines Nike Tiempo Legend',
     price: 40000,
-    image: 'imagenesUsadas/botines_nike.jpg'
+    image: 'imagenesUsadas/botines.jpg'
   },
   {
     id: 4,
     title: 'Guantes de arquero Puma',
     price: 15000,
-    image: 'imagenesUsadas/guantes_puma.jpg'
+    image: 'imagenesUsadas/guantes.jpg'
   }
 ];
 
