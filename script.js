@@ -14,6 +14,8 @@ fetch('https://fakestoreapi.com/products')
   .catch(error => console.error('Error cargando productos:', error));
 
 function renderizarProductos(productos) {
+  productosContainer.innerHTML = ''; // Limpia antes de renderizar
+
   productos.forEach(producto => {
     const col = document.createElement('div');
     col.classList.add('col-12', 'col-md-4');
@@ -23,12 +25,22 @@ function renderizarProductos(productos) {
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">${producto.title}</h5>
           <p class="card-text">$${producto.price}</p>
-          <button class="btn btn-success mt-auto" onclick='agregarAlCarrito(${JSON.stringify(producto)})'>Agregar al carrito</button>
+          <button class="btn btn-success mt-auto agregar-btn" data-id="${producto.id}">Agregar al carrito</button>
         </div>
       </div>
     `;
     productosContainer.appendChild(col);
   });
+
+  // Agregar eventos a los botones ya renderizados
+  document.querySelectorAll('.agregar-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = parseInt(e.target.getAttribute('data-id'));
+      const producto = productos.find(p => p.id === id);
+      agregarAlCarrito(producto);
+    });
+  });
+
   actualizarCarrito();
 }
 
