@@ -8,6 +8,6 @@ Con la entrega final se le agregó:la carga dinámica de productos utilizando un
 
 Tiene la navegacion interna entre secciones mediante anclas, multimedia intefrada, google fonts y fondos personalizados aplicados.
 
-Pagina publicada en GitHun pages. 
+Pagina publicada en GitHub pages. 
 
 URL https://marilu040701.github.io/futbol-promiedos
