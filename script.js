@@ -1,21 +1,39 @@
-// script.js
-
 const productosContainer = document.getElementById('productos-container');
 const carritoContainer = document.getElementById('lista-carrito');
 const totalCarrito = document.getElementById('total-carrito');
 const cartCount = document.getElementById('cart-count');
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-let listaProductos = []; // ← variable global para guardar los productos
 
-// Fetch de productos desde API falsa
-fetch('https://fakestoreapi.com/products')
-  .then(res => res.json())
-  .then(data => {
-    listaProductos = data; // ← guardar productos globalmente
-    renderizarProductos(data);
-  })
-  .catch(error => console.error('Error cargando productos:', error));
+// ✅ Tus productos definidos a mano
+let listaProductos = [
+  {
+    id: 1,
+    title: 'Camiseta River Plate 23/24',
+    price: 25000,
+    image: 'imagenesUsadas/camiseta_river.jpg'
+  },
+  {
+    id: 2,
+    title: 'Pelota Adidas Copa Mundial',
+    price: 18000,
+    image: 'imagenesUsadas/pelota_adidas.jpg'
+  },
+  {
+    id: 3,
+    title: 'Botines Nike Tiempo Legend',
+    price: 40000,
+    image: 'imagenesUsadas/botines_nike.jpg'
+  },
+  {
+    id: 4,
+    title: 'Guantes de arquero Puma',
+    price: 15000,
+    image: 'imagenesUsadas/guantes_puma.jpg'
+  }
+];
+
+renderizarProductos(listaProductos);
 
 function renderizarProductos(productos) {
   productosContainer.innerHTML = ''; // Limpia antes de renderizar
@@ -40,7 +58,7 @@ function renderizarProductos(productos) {
   document.querySelectorAll('.agregar-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = parseInt(e.target.getAttribute('data-id'));
-      const producto = listaProductos.find(p => p.id === id); // ← usamos la variable global
+      const producto = listaProductos.find(p => p.id === id);
       if (producto) {
         agregarAlCarrito(producto);
       } else {
