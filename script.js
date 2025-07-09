@@ -5,35 +5,16 @@ const cartCount = document.getElementById('cart-count');
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-// ✅ Tus productos definidos a mano
-let listaProductos = [
-  {
-    id: 1,
-    title: 'Camiseta River Plate 23/24',
-    price: 25000,
-    image: 'imagenesUsadas/camiseta.jpg'
-  },
-  {
-    id: 2,
-    title: 'Pelota Adidas Copa Mundial',
-    price: 18000,
-    image: 'imagenesUsadas/pelota.jpg'
-  },
-  {
-    id: 3,
-    title: 'Botines Nike Tiempo Legend',
-    price: 40000,
-    image: 'imagenesUsadas/botines.jpg'
-  },
-  {
-    id: 4,
-    title: 'Guantes de arquero Puma',
-    price: 15000,
-    image: 'imagenesUsadas/guantes.jpg'
-  }
-];
+let listaProductos = [];
 
-renderizarProductos(listaProductos);
+// Cargar productos desde JSON (API simulada)
+fetch('productos.json')
+  .then(res => res.json())
+  .then(data => {
+    listaProductos = data;
+    renderizarProductos(listaProductos);
+  })
+  .catch(error => console.error('Error al cargar productos:', error));
 
 function renderizarProductos(productos) {
   productosContainer.innerHTML = ''; // Limpia antes de renderizar
