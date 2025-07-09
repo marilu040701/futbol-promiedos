@@ -60,9 +60,15 @@ function agregarAlCarrito(producto) {
   }
   guardarYActualizarCarrito();
 }
-
 function eliminarDelCarrito(id) {
-  carrito = carrito.filter(p => p.id !== id);
+  const producto = carrito.find(p => p.id === id);
+  if (producto) {
+    if (producto.cantidad > 1) {
+      producto.cantidad -= 1;
+    } else {
+      carrito = carrito.filter(p => p.id !== id);
+    }
+  }
   guardarYActualizarCarrito();
 }
 

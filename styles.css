@@ -56,15 +56,17 @@ section {
 }
 
 /* Inicio */
-  .imagen-inicio {
+.imagen-inicio {
   width: 100%;
+  max-width: 1200px;
   height: 300px;
   object-fit: cover;
+  object-position: center;
   display: block;
-  margin: 1rem auto;
+  margin: 2rem auto;
   border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-
 
 
 /* Productos - Flexbox */
