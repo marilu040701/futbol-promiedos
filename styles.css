@@ -57,11 +57,9 @@ section {
 
 /* Inicio */
 .imagen-inicio {
-  width: 100%;
-  max-width: 1200px;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
+  max-width: 800px;
+  width: 90%;
+  height: auto;
   display: block;
   margin: 2rem auto;
   border-radius: 0.5rem;
