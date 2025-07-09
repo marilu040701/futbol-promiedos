@@ -6,11 +6,15 @@ const totalCarrito = document.getElementById('total-carrito');
 const cartCount = document.getElementById('cart-count');
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+let listaProductos = []; // ← variable global para guardar los productos
 
 // Fetch de productos desde API falsa
 fetch('https://fakestoreapi.com/products')
   .then(res => res.json())
-  .then(data => renderizarProductos(data))
+  .then(data => {
+    listaProductos = data; // ← guardar productos globalmente
+    renderizarProductos(data);
+  })
   .catch(error => console.error('Error cargando productos:', error));
 
 function renderizarProductos(productos) {
@@ -36,8 +40,12 @@ function renderizarProductos(productos) {
   document.querySelectorAll('.agregar-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const id = parseInt(e.target.getAttribute('data-id'));
-      const producto = productos.find(p => p.id === id);
-      agregarAlCarrito(producto);
+      const producto = listaProductos.find(p => p.id === id); // ← usamos la variable global
+      if (producto) {
+        agregarAlCarrito(producto);
+      } else {
+        console.error('Producto no encontrado con ID:', id);
+      }
     });
   });
 
